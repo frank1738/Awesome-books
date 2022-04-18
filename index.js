@@ -5,21 +5,20 @@ const bookAuthor = document.querySelector('.author');
 let oid = 0;
 let myBooks = [];
 
-
 function removeItem(event) {
   const key = event.target.closest('div').id;
   const localData = localStorage.getItem('books');
   const parseData = JSON.parse(localData);
   const filtered = parseData.filter((book) => book.id != key);
   localStorage.setItem('books', JSON.stringify(filtered));
-  event.target.closest('div').remove()
+  event.target.closest('div').remove();
 }
 if (!localStorage.getItem('books')) {
   localStorage.setItem('books', JSON.stringify(myBooks));
 } else {
-  const rawData=localStorage.getItem('books')
-  const myData=JSON.parse(rawData)
-  for(let i=0;i<myData.length;i+=1){
+  const rawData = localStorage.getItem('books');
+  const myData = JSON.parse(rawData);
+  for (let i = 0; i < myData.length; i += 1) {
     const book = document.createElement('div');
     book.classList.add('book');
     book.setAttribute('id', myData[i].id);
@@ -28,16 +27,13 @@ if (!localStorage.getItem('books')) {
   <h2 class="author">${myData[i].author}</h2>
   <button class="remove-btn">remove</button>
   `;
-  bookSection.appendChild(book)
+    bookSection.appendChild(book);
   }
-  const deleteBtn=document.querySelectorAll('.remove-btn')
-  deleteBtn.forEach((btn)=>{
-    btn.addEventListener('click',removeItem)
-  })
- 
+  const deleteBtn = document.querySelectorAll('.remove-btn');
+  deleteBtn.forEach((btn) => {
+    btn.addEventListener('click', removeItem);
+  });
 }
-
-
 
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
@@ -66,4 +62,3 @@ submitBtn.addEventListener('click', (event) => {
     btn.addEventListener('click', removeItem);
   });
 });
-
