@@ -3,13 +3,14 @@ const bookSection = document.querySelector('.books-section');
 const bookTitle = document.querySelector('.title');
 const bookAuthor = document.querySelector('.author');
 let oid = 0;
-let myBooks = [];
+const myBooks = [];
 
 function removeItem(event) {
   const key = event.target.closest('div').id;
   const localData = localStorage.getItem('books');
   const parseData = JSON.parse(localData);
-  const filtered = parseData.filter((book) => book.id != key);
+  console.log(typeof parseData[0].id);
+  const filtered = parseData.filter((book) => book.id.toString() !== key);
   localStorage.setItem('books', JSON.stringify(filtered));
   event.target.closest('div').remove();
 }
