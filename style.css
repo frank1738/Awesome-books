@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .book {
+    border-bottom: 2px solid grey;
+    padding: 1rem 0;
+  }
+  
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+  }
+  
+  input {
+    margin-top: 0.5rem;
+    padding: 0.3rem;
+  }
+  
+  .books-section {
+    width: 30%;
+  }
+  
+  .submit-btn {
+    margin-top: 0.5rem;
+    width: 18%;
+    padding: 0.2rem;
+  }
+  
+  .remove-btn {
+    padding: 0.2rem;
+  }
+  
+  .container {
+    margin-left: 3rem;
+  }
