@@ -2,7 +2,7 @@
 
 # Awesome Books
 
-> Description the project.
+> A book Library.
 
 ## Built With
 
@@ -52,9 +52,9 @@ See the [open issues](https://github.com/frank1738/Awesome-books/issues) for a f
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@frank1738](https://github.com/frank1738)
+- Twitter: [@frankhiggins08](https://twitter.com/frankhiggins08)
+- LinkedIn: [Frankline Osoro](http://www.linkedin.com/in/frankline-osoro-b526ba18b)
 
 👤 **Author2**
 
