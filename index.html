@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
-    <div class="container">
-      <h1 class="main-header">Awesome books</h1>
-      <section class="books-section"></section>
-      <form class="form-section">
-        <input type="text" placeholder="title" class="title" />
-        <input type="text" placeholder="author" class="author" />
-        <button class="submit-btn">Add</button>
-      </form>
-    </div>
-    <script src="index.js" ></script>
+    <h2 class="header">All Awesome Books</h2>
+    <section class="book-list"></section>
+
+    <form class="add-new hide">
+      <h2>Add a new book</h2>
+      <input type="text" id="title" placeholder="Enter book title" />
+      <input type="text" id="author" placeholder="Enter author" />
+      <input type="submit" id="submit" value="Add" />
+    </form>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
