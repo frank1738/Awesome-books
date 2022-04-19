@@ -1,15 +1,10 @@
+
 const submitBtn = document.querySelector('.submit-btn');
 const bookSection = document.querySelector('.books-section');
 const bookTitle = document.querySelector('.title');
 const bookAuthor = document.querySelector('.author');
 let oid = 0;
 
-class Book {
-  constructor(author, title){
-    this.author = author;
-    this.title = title;
-  }
-}
 
 class Library {
   constructor() {
