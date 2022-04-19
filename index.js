@@ -34,17 +34,17 @@ class Library {
       btn.addEventListener('click', this.removeItem);
     });
   }
-
+  /* eslint-disable */
   removeItem(event) {
     const key = event.target.closest('div').id;
     const localData = localStorage.getItem('books');
     const parseData = JSON.parse(localData);
-    console.log(typeof parseData[0].id);
     const filtered = parseData.filter((book) => book.id.toString() !== key);
     localStorage.setItem('books', JSON.stringify(filtered));
     event.target.closest('div').remove();
   }
 }
+/* eslint-enable */
 
 const myLibrary = new Library();
 
