@@ -1,9 +1,90 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const homeLink = document.querySelector('.home');
   const bookSection = document.querySelector('.book-list');
   const bookTitle = document.querySelector('#title');
   const bookAuthor = document.querySelector('#author');
   const addBtn = document.querySelector('#submit');
-
+  const links = document.querySelectorAll('.link');
+  const homeSection = document.querySelector('.books-container');
+  const addSection = document.querySelector('.add-new');
+  const contactSection = document.querySelector('.contact-information');
+  homeSection.classList.add('showContent');
+  homeLink.classList.add('select');
+  let prevPage = '';
+  let prevLink = '';
+  let currentPage = homeSection;
+  let selectedLink = '';
+  addSection.classList.add('hideContent');
+  contactSection.classList.add('hideContent');
+  const Links = document.querySelectorAll('.link');
+  Links.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      let currentLink = event.target.innerHTML;
+      if (prevPage) {
+        prevLink.classList.remove('select');
+        prevPage.classList.remove('showContent');
+        prevPage.classList.add('hideContent');
+        if (currentLink === 'List') {
+          selectedLink = event.target;
+          selectedLink.classList.add('select');
+          prevLink = selectedLink;
+          currentPage = homeSection;
+          currentPage.classList.remove('hideContent');
+          currentPage.classList.add('showContent');
+          prevPage = currentPage;
+        }
+        if (currentLink === 'Add new') {
+          selectedLink = event.target;
+          selectedLink.classList.add('select');
+          prevLink = selectedLink;
+          currentPage = addSection;
+          currentPage.classList.remove('hideContent');
+          currentPage.classList.add('showContent');
+          prevPage = currentPage;
+        }
+        if (currentLink === 'Contact') {
+          selectedLink = event.target;
+          selectedLink.classList.add('select');
+          prevLink = selectedLink;
+          currentPage = contactSection;
+          currentPage.classList.remove('hideContent');
+          currentPage.classList.add('showContent');
+          prevPage = currentPage;
+        }
+      } else {
+        if (currentLink === 'Add new') {
+          homeLink.classList.remove('select');
+          selectedLink = event.target;
+          selectedLink.classList.add('select');
+          prevLink = selectedLink;
+          currentPage.classList.remove('showContent');
+          currentPage.classList.add('hideContent');
+          currentPage = addSection;
+          currentPage.classList.remove('hideContent');
+          currentPage.classList.add('showContent');
+          prevPage = currentPage;
+          addBtn.addEventListener('click', () => {
+            addSection.classList.add('hideContent');
+            homeSection.classList.add('showContent');
+            location.reload();
+          });
+        }
+        if (currentLink === 'Contact') {
+          homeLink.classList.remove('select');
+          selectedLink = event.target;
+          selectedLink.classList.add('select');
+          prevLink = selectedLink;
+          currentPage.classList.remove('showContent');
+          currentPage.classList.add('hideContent');
+          currentPage = contactSection;
+          currentPage.classList.remove('hideContent');
+          currentPage.classList.add('showContent');
+          prevPage = currentPage;
+        }
+      }
+    });
+  });
   class Library {
     constructor() {
       this.library = JSON.parse(localStorage.getItem('book-collection')) || [];
