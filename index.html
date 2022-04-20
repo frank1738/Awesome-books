@@ -12,18 +12,19 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <h1>Awesome Books</h1>
-        <ul class="navItems">
-          <li id="list"><a>List</a></li>
-          <li id="add-new"><a>Add new</a></li>
-          <li id="contact-section"><a>Contact</a></li>
-        </ul>
-      </nav>
-      <p id="date"></p>
-    </header>
-
+    <nav class="navigation">
+      <h1 class="nav-header">Awesome Books</h1>
+      <ul class="links">
+        <li class="link-item" id="list"><a href="" class="link">List</a></li>
+        <li class="link-item" id="add-new">
+          <a href="" class="link">Add new</a>
+        </li>
+        <li class="link-item" id="contact-section">
+          <a href="" class="link contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <p class="date"></p>
     <div class="books-container">
       <h2 class="header">All Awesome Books</h2>
       <section class="book-list"></section>
@@ -34,20 +35,18 @@
       <input type="text" id="author" placeholder="Enter author" />
       <input type="submit" id="submit" value="Add" />
     </form>
-
-    <section id="contact" class="contact-section hide">
-      <h2>Contact Information</h2>
-      <p>
-        If you have any questions or you just want to say "Hello", you can reach
-        out to us!
+    <section id="contact" class="contact-section hide contact-information">
+      <h2 class="contact-header">Contact information</h2>
+      <p class="question">
+        Do you have any questions or just want to say "Hello"?
       </p>
-      <ul>
-        <li>Our email: example@email.com</li>
-        <li>Our phone number: 00-111-2233</li>
-        <li>Our address: 1030 Code Drive, US</li>
+      <p class="question">You can reach out to us !</p>
+      <ul class="contact-list">
+        <li class="contact-us">Our email awesomebooks@gmail.com</li>
+        <li class="contact-us">Our phone number +255598089877</li>
+        <li class="contact-us">Our Address 46546 San Diego</li>
       </ul>
     </section>
-
     <footer class="footer">Copyright @awesome books 2022</footer>
     <script src="./index.js" type="module"></script>
   </body>
