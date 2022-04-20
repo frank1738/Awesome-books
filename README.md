@@ -12,7 +12,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://github.com/frank1738/Awesome-books)
+[Live Demo Link](https://frank1738.github.io/Awesome-books/)
 
 ## Getting Started
 
