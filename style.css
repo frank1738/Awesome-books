@@ -1,145 +1,249 @@
-window.addEventListener('DOMContentLoaded', () => {
-  const homeLink = document.querySelector('.home');
-  const bookSection = document.querySelector('.book-list');
-  const bookTitle = document.querySelector('#title');
-  const bookAuthor = document.querySelector('#author');
-  const addBtn = document.querySelector('#submit');
-  const homeSection = document.querySelector('.books-container');
-  const addSection = document.querySelector('.add-new');
-  const contactSection = document.querySelector('.contact-information');
-  homeSection.classList.add('showContent');
-  homeLink.classList.add('select');
-  let prevPage = '';
-  let prevLink = '';
-  let currentPage = homeSection;
-  let selectedLink = '';
-  addSection.classList.add('hideContent');
-  contactSection.classList.add('hideContent');
-  const Links = document.querySelectorAll('.link');
-  Links.forEach((item) => {
-    item.addEventListener('click', (event) => {
-      event.preventDefault();
-      const currentLink = event.target.innerHTML;
-      if (prevPage) {
-        prevLink.classList.remove('select');
-        prevPage.classList.remove('showContent');
-        prevPage.classList.add('hideContent');
-        if (currentLink === 'List') {
-          selectedLink = event.target;
-          selectedLink.classList.add('select');
-          prevLink = selectedLink;
-          currentPage = homeSection;
-          currentPage.classList.remove('hideContent');
-          currentPage.classList.add('showContent');
-          prevPage = currentPage;
-        }
-        if (currentLink === 'Add new') {
-          selectedLink = event.target;
-          selectedLink.classList.add('select');
-          prevLink = selectedLink;
-          currentPage = addSection;
-          currentPage.classList.remove('hideContent');
-          currentPage.classList.add('showContent');
-          prevPage = currentPage;
-        }
-        if (currentLink === 'Contact') {
-          selectedLink = event.target;
-          selectedLink.classList.add('select');
-          prevLink = selectedLink;
-          currentPage = contactSection;
-          currentPage.classList.remove('hideContent');
-          currentPage.classList.add('showContent');
-          prevPage = currentPage;
-        }
-      } else {
-        if (currentLink === 'Add new') {
-          homeLink.classList.remove('select');
-          selectedLink = event.target;
-          selectedLink.classList.add('select');
-          prevLink = selectedLink;
-          currentPage.classList.remove('showContent');
-          currentPage.classList.add('hideContent');
-          currentPage = addSection;
-          currentPage.classList.remove('hideContent');
-          currentPage.classList.add('showContent');
-          prevPage = currentPage;
-          addBtn.addEventListener('click', () => {
-            addSection.classList.add('hideContent');
-            homeSection.classList.add('showContent');
-            window.location.reload();
-          });
-        }
-        if (currentLink === 'Contact') {
-          homeLink.classList.remove('select');
-          selectedLink = event.target;
-          selectedLink.classList.add('select');
-          prevLink = selectedLink;
-          currentPage.classList.remove('showContent');
-          currentPage.classList.add('hideContent');
-          currentPage = contactSection;
-          currentPage.classList.remove('hideContent');
-          currentPage.classList.add('showContent');
-          prevPage = currentPage;
-        }
-      }
-    });
-  });
-  class Library {
-    constructor() {
-      this.library = JSON.parse(localStorage.getItem('book-collection')) || [];
-    }
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-    addBook(bookTitle, bookAuthor) {
-      const selectedBook = { title: bookTitle.value, author: bookAuthor.value };
-      this.library.push(selectedBook);
-      this.createBook();
-    }
+body {
+  font-family: poppins, sans-serif;
+  background-color: #382923;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-    createBook() {
-      bookSection.innerHTML = '';
-      for (let i = 0; i < this.library.length; i += 1) {
-        const bookContainer = document.createElement('div');
-        bookContainer.setAttribute('class', 'container');
-        const bookDescription = document.createElement('h2');
-        bookDescription.setAttribute('class', 'width');
-        const deleteBtn = document.createElement('button');
-        deleteBtn.setAttribute('class', 'deletebtn');
-        deleteBtn.setAttribute('data', i);
+header {
+  width: 100%;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-        bookDescription.textContent = `${this.library[i].title} by ${this.library[i].author}`;
-        deleteBtn.textContent = 'Delete';
+h1 {
+  color: #f5cac3;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
 
-        bookContainer.appendChild(bookDescription);
-        bookContainer.appendChild(deleteBtn);
-        bookSection.appendChild(bookContainer);
-      }
-      this.deleteBook();
-    }
+h2 {
+  color: #f5cac3;
+  margin-bottom: 50px;
+}
 
-    deleteBook() {
-      [...document.querySelectorAll('.deletebtn')].forEach((element) => {
-        const elementIndex = parseInt(element.getAttribute('data'), 10);
-        element.addEventListener('click', () => {
-          this.library.splice(elementIndex, 1);
-          localStorage.setItem('book-collection', JSON.stringify(this.library));
-          this.createBook();
-        });
-      });
-    }
+section {
+  outline: 1px solid whitesmoke;
+  width: 95%;
+  margin-bottom: 50px;
+  opacity: 0.9;
+  border-radius: 0.3rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  font-size: 0.8rem;
+}
+
+.container > h2 {
+  color: #f7ede2;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+.container:nth-child(even) {
+  background-color: rgba(0 0 0/75%);
+}
+
+.container:nth-child(odd) {
+  background-color: rgba(0 0 0/35%);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 60%;
+  margin-bottom: 50px;
+}
+
+form > input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgb(111 87 77 / 60%);
+  border: none;
+  border-radius: 3px;
+  color: whitesmoke;
+  font-family: poppins, sans-serif;
+}
+
+form > input:focus {
+  outline: none;
+}
+
+input[type='submit'] {
+  width: 25%;
+  align-self: flex-end;
+  padding: 5px;
+  background-color: #f2b450;
+  color: #000;
+  font-weight: 700;
+  border: 1px solid;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type='submit']:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: #f7ede2;
+  border: 1px solid whitesmoke;
+}
+
+.books-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link-item {
+  list-style: none;
+  border-right: 1px solid grey;
+  padding: 0.5rem 1rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #e3b505;
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  color: white;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 1rem 0;
+  border: 1px solid whitesmoke;
+  border-radius: 0.2rem;
+  padding: 1rem 0;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-header {
+  margin-left: 2rem;
+  font-size: 1.3rem;
+}
+
+.contact {
+  border: none;
+}
+
+.contact-information {
+  padding: 2rem;
+  border: 1px solid whitesmoke;
+  width: 95%;
+  border-radius: 0.5rem;
+}
+
+.contact-list {
+  padding: 0 2rem;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.contact-header {
+  text-align: center;
+}
+
+.footer {
+  border: 1px solid grey;
+  margin-top: 5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 95%;
+  color: whitesmoke;
+  opacity: 0.9;
+}
+
+.deletebtn {
+  background-color: #f2b450;
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  border: solid 1px #f2b450;
+  border-radius: 0.2rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.deletebtn:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.question {
+  color: whitesmoke;
+  opacity: 0.9;
+}
+
+.contact-us {
+  color: whitesmoke;
+  opacity: 0.9;
+}
+
+.date {
+  width: 95%;
+  display: flex;
+  flex-direction: row-reverse;
+  color: whitesmoke;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  margin-right: 0.5rem;
+}
+
+.showContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.hideContent {
+  display: none;
+}
+
+.select {
+  color: whitesmoke;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+    padding: 1rem 0;
   }
 
-  const myLibrary = new Library();
+  .links {
+    margin-top: 0.5rem;
+  }
 
-  myLibrary.createBook();
+  .link-item {
+    padding: 0;
+    padding: 0.1rem 0.5rem;
+  }
 
-  addBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (bookTitle.value === '' || bookAuthor.value === '') {
-      return;
-    }
-    myLibrary.addBook(bookTitle, bookAuthor);
-    localStorage.setItem('book-collection', JSON.stringify(myLibrary.library));
-    bookTitle.value = '';
-    bookAuthor.value = '';
-  });
-});
+  .date {
+    margin-right: 0.5rem;
+  }
+}
