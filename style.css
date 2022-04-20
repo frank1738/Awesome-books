@@ -159,6 +159,10 @@ input[type='submit']:hover {
   border: 1px solid whitesmoke;
   width: 95%;
   border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-list {
@@ -179,6 +183,7 @@ input[type='submit']:hover {
   width: 95%;
   color: whitesmoke;
   opacity: 0.9;
+  text-align: center;
 }
 
 .deletebtn {
