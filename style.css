@@ -93,8 +93,7 @@ input[type='submit'] {
   align-self: flex-end;
   padding: 5px;
   background-color: #f2b450;
-  color: #000000;
-  border: none;
+  color: #000;
   font-weight: 700;
   border: 1px solid;
   transition: all 0.3s ease-in-out;
@@ -172,7 +171,6 @@ input[type='submit']:hover {
 .footer {
   border: 1px solid grey;
   margin-top: 5rem;
-  width: 100%;
   padding: 1rem;
   margin-bottom: 1rem;
   width: 95%;
@@ -182,7 +180,7 @@ input[type='submit']:hover {
 
 .deletebtn {
   background-color: #f2b450;
-  color: #000000;
+  color: #000;
   padding: 0.2rem 0.5rem;
   border: solid 1px #f2b450;
   border-radius: 0.2rem;
@@ -219,6 +217,7 @@ input[type='submit']:hover {
     flex-direction: column;
     padding: 1rem 0;
   }
+
   .links {
     margin-top: 0.5rem;
   }
