@@ -96,7 +96,7 @@ input[type='submit'] {
   color: #000;
   font-weight: 700;
   border: 1px solid;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 input[type='submit']:hover {
@@ -119,14 +119,13 @@ input[type='submit']:hover {
   padding: 0.5rem 1rem;
 }
 
-.link-item a {
+.link {
   text-decoration: none;
   color: #e3b505;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.link-item a:hover {
+.link:hover {
   color: white;
 }
 
@@ -138,7 +137,7 @@ input[type='submit']:hover {
   margin: 1rem 0;
   border: 1px solid whitesmoke;
   border-radius: 0.2rem;
-  padding: 0.3rem 0;
+  padding: 1rem 0;
 }
 
 .links {
@@ -156,7 +155,10 @@ input[type='submit']:hover {
 }
 
 .contact-information {
-  padding: 2rem 3rem;
+  padding: 2rem;
+  border: 1px solid whitesmoke;
+  width: 95%;
+  border-radius: 0.5rem;
 }
 
 .contact-list {
@@ -185,7 +187,7 @@ input[type='submit']:hover {
   padding: 0.2rem 0.5rem;
   border: solid 1px #f2b450;
   border-radius: 0.2rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .deletebtn:hover {
@@ -213,8 +215,17 @@ input[type='submit']:hover {
   margin-right: 0.5rem;
 }
 
-.hide {
+.showContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.hideContent {
   display: none;
+}
+
+.select {
+  color: whitesmoke;
 }
 
 @media (max-width: 768px) {
