@@ -58,7 +58,7 @@ section {
 }
 
 .container:nth-child(even) {
-  background-color: rgba(0 0 0/75%)
+  background-color: rgba(0 0 0/75%);
 }
 
 .container:nth-child(odd) {
@@ -179,7 +179,6 @@ input[type='submit']:hover {
   width: 95%;
   color: whitesmoke;
   opacity: 0.9;
-
 }
 
 .deletebtn {
@@ -228,7 +227,6 @@ input[type='submit']:hover {
 .select {
   color: whitesmoke;
 }
-
 
 @media (max-width: 768px) {
   .navigation {

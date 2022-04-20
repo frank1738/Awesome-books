@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const bookTitle = document.querySelector('#title');
   const bookAuthor = document.querySelector('#author');
   const addBtn = document.querySelector('#submit');
-  const links = document.querySelectorAll('.link');
   const homeSection = document.querySelector('.books-container');
   const addSection = document.querySelector('.add-new');
   const contactSection = document.querySelector('.contact-information');
@@ -20,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
   Links.forEach((item) => {
     item.addEventListener('click', (event) => {
       event.preventDefault();
-      let currentLink = event.target.innerHTML;
+      const currentLink = event.target.innerHTML;
       if (prevPage) {
         prevLink.classList.remove('select');
         prevPage.classList.remove('showContent');
@@ -67,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
           addBtn.addEventListener('click', () => {
             addSection.classList.add('hideContent');
             homeSection.classList.add('showContent');
-            location.reload();
+            window.location.reload();
           });
         }
         if (currentLink === 'Contact') {
