@@ -58,11 +58,11 @@ section {
 }
 
 .container:nth-child(even) {
-  background-color: gray;
+  background-color: rgba(0 0 0/75%)
 }
 
 .container:nth-child(odd) {
-  background-color: rgba(0 0 0/45%);
+  background-color: rgba(0 0 0/35%);
 }
 
 form {
