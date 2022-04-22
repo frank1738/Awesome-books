@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans");
 *,
 *::before,
 *::after {
@@ -8,11 +9,17 @@
 
 body {
   font-family: poppins, sans-serif;
-  background-color: #382923;
+  background-color: rgba(0 0 0/85%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background-image: url(./image/library.jpg);
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: auto;
+  background-attachment: fixed;
 }
 
 header {
@@ -92,11 +99,12 @@ input[type='submit'] {
   width: 25%;
   align-self: flex-end;
   padding: 5px;
-  background-color: #f2b450;
-  color: #000;
+  background-color: rgb(111 87 77 / 60%);
+  color: whitesmoke;
   font-weight: 700;
-  border: 1px solid;
+  border: 1px solid rgb(111 87 77 / 60%);
   transition: all 0.2s ease-in-out;
+  opacity: 0.8;
 }
 
 input[type='submit']:hover {
@@ -135,9 +143,9 @@ input[type='submit']:hover {
   align-items: center;
   width: 95%;
   margin: 1rem 0;
-  border: 1px solid whitesmoke;
-  border-radius: 0.2rem;
   padding: 1rem 0;
+  border: 1px solid lightgray;
+  box-shadow: 0px 3px 0px lightgrey;
 }
 
 .links {
@@ -147,7 +155,10 @@ input[type='submit']:hover {
 
 .nav-header {
   margin-left: 2rem;
-  font-size: 1.3rem;
+  font-size: 2rem;
+  font-family: "La Belle Aurore", sans-serif;
+  line-height: 0;
+  margin-top: 0.8rem;
 }
 
 .contact {
@@ -156,7 +167,6 @@ input[type='submit']:hover {
 
 .contact-information {
   padding: 2rem;
-  border: 1px solid whitesmoke;
   width: 95%;
   border-radius: 0.5rem;
   display: flex;
@@ -184,13 +194,14 @@ input[type='submit']:hover {
   color: whitesmoke;
   opacity: 0.9;
   text-align: center;
+  border-radius: 0.5rem;
 }
 
 .deletebtn {
-  background-color: #f2b450;
-  color: #000;
+  background-color: rgb(111 87 77 / 60%);
+  color: #e3b505;
   padding: 0.2rem 0.5rem;
-  border: solid 1px #f2b450;
+  border: solid 1px rgb(111 87 77 / 60%);
   border-radius: 0.2rem;
   transition: all 0.2s ease-in-out;
 }
@@ -250,5 +261,8 @@ input[type='submit']:hover {
 
   .date {
     margin-right: 0.5rem;
+  }
+  .nav-header{
+    padding: 1rem;
   }
 }
