@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans");
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans');
 *,
 *::before,
 *::after {
@@ -22,12 +22,25 @@ body {
   background-attachment: fixed;
 }
 
+.form-header {
+  font-family: 'La Belle Aurore', sans-serif;
+  line-height: 0;
+  font-size: 3rem;
+}
+
+.header {
+  font-family: 'La Belle Aurore', sans-serif;
+  line-height: 0;
+  font-size: 3rem;
+}
+
 header {
   width: 100%;
   margin-bottom: 150px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
 }
 
 h1 {
@@ -156,7 +169,7 @@ input[type='submit']:hover {
 .nav-header {
   margin-left: 2rem;
   font-size: 2rem;
-  font-family: "La Belle Aurore", sans-serif;
+  font-family: 'La Belle Aurore', sans-serif;
   line-height: 0;
   margin-top: 0.8rem;
 }
@@ -262,7 +275,7 @@ input[type='submit']:hover {
   .date {
     margin-right: 0.5rem;
   }
-  .nav-header{
+  .nav-header {
     padding: 1rem;
   }
 }
