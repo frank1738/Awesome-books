@@ -263,6 +263,7 @@ input[type='submit']:hover {
     padding: 1rem 0;
   }
 
+
   .links {
     margin-top: 0.5rem;
   }
@@ -278,4 +279,13 @@ input[type='submit']:hover {
   .nav-header {
     padding: 1rem;
   }
+
+  .form-header{
+    font-size: 2rem;
+  }
+
+  .header {
+    font-size: 2rem;
+  }
+
 }
